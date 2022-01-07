@@ -36,7 +36,7 @@
         <div class="progress-bar" style="width:<%= status.pct_complete %>%">&nbsp;</div>
         <div class="progress-pct"><%= status.pct_complete ? "#{status.pct_complete}%" : '' %></div>
       </td>
-      <td><%= status.message %></td>
+      <td><%=h status.message %></td>
       <td><% if status.killable? %><a href="<%= u(:statuses) %>/<%= status.uuid %>/kill" class="kill">Kill</a><% end %></td>
     </tr>
     <% end %>

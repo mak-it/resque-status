@@ -9,7 +9,7 @@
     <div class="status-progress-bar status-<%= @status.status %>" style="width: <%= @status.pct_complete %>%;"></div>
     <p><%= @status.pct_complete %>%</p>
   </div>
-  <div class="status-message"><%= @status.message %></div>
+  <div class="status-message"><%=h @status.message %></div>
   <div class="status-time"><%= @status.time? ? @status.time : 'Not started' %></div>
 
   <h2>Details</h2>
