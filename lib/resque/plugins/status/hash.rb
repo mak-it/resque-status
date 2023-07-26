@@ -196,8 +196,16 @@ module Resque
 
         # Proxy deprecated methods directly back to Resque itself.
         class << self
-          [:redis, :encode, :decode].each do |method|
-            define_method(method) { |*args| Resque.send(method, *args) }
+          def encode(val)
+            Resque.encode(val)
+          end
+
+          def decode(val)
+            Resque.decode(val)
+          end
+
+          def redis
+            Resque.redis
           end
         end
 
